@@ -1,3 +1,3 @@
-# programacion2026
+# Programacion2026
 # Matricula: A25216548
-# Coreo: spartantaken728@gmail.com
+# Correo: spartantaken728@gmail.com
