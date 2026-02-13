@@ -10,7 +10,7 @@ Estudiante::Estudiante() {
     activo = false;
 }
 
-// Constructor con parámetros
+// Constructor con parametros
 Estudiante::Estudiante(std::string nombre, std::string codigo, int edad, float promedio, bool activo) {
     this->nombre = nombre;
     this->codigo = codigo;
@@ -51,17 +51,17 @@ int Estudiante::obtenerEdad() { return edad; }
 float Estudiante::obtenerPromedio() { return promedio; }
 bool Estudiante::obtenerActivo() { return activo; }
 
-// Métodos mostrar
+// Mostrar informacion
 void Estudiante::mostrarNombre() {
     std::cout << "Nombre: " << nombre << std::endl;
 }
 
 void Estudiante::mostrarCodigo() {
-    std::cout << "Código: " << codigo << std::endl;
+    std::cout << "Codigo: " << codigo << std::endl;
 }
 
 void Estudiante::mostrarEdad() {
-    std::cout << "Edad: " << edad << " años" << std::endl;
+    std::cout << "Edad: " << edad << " anios" << std::endl;
 }
 
 void Estudiante::mostrarPromedio() {
@@ -86,7 +86,8 @@ void Estudiante::incrementarEdad() {
 }
 
 void Estudiante::calcularEstadoAcademico() {
-    std::cout << "Estado académico: ";
+    std::cout << "Estado academico: ";
+
     if (promedio >= 9.0)
         std::cout << "Excelente";
     else if (promedio >= 8.0)

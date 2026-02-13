@@ -30,7 +30,7 @@ public:
     float obtenerPromedio();
     bool obtenerActivo();
 
-    // Métodos de visualización
+    // Mostrar informacion
     void mostrarNombre();
     void mostrarCodigo();
     void mostrarEdad();
@@ -38,7 +38,7 @@ public:
     void mostrarActivo();
     void mostrarInformacionCompleta();
 
-    // Métodos de utilidad
+    // Utilidad
     void incrementarEdad();
     void calcularEstadoAcademico();
 };

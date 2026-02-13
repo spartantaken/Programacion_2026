@@ -2,30 +2,32 @@
 #include "estudiante.h"
 
 int main() {
-    std::cout << "=== Sistema de Gestión de Estudiante ===\n\n";
 
-    // Constructor por defecto
+    std::cout << "=== Sistema de Gestion de Estudiante ===\n\n";
+
+    // Estudiante con constructor por defecto
     Estudiante estudiante1;
+
     std::cout << "Estudiante 1 (constructor por defecto):\n";
     estudiante1.mostrarInformacionCompleta();
     std::cout << std::endl;
 
     // Actualizar datos
-    estudiante1.actualizarNombre("María García López");
+    estudiante1.actualizarNombre("Maria Garcia Lopez");
     estudiante1.actualizarCodigo("EST-2024-001");
     estudiante1.actualizarEdad(20);
     estudiante1.actualizarPromedio(9.2);
     estudiante1.actualizarActivo(true);
 
-    std::cout << "Estudiante 1 después de actualizar:\n";
+    std::cout << "Estudiante 1 despues de actualizar:\n";
     estudiante1.mostrarInformacionCompleta();
     estudiante1.calcularEstadoAcademico();
     std::cout << std::endl;
 
-    // Constructor con parámetros
-    Estudiante estudiante2("Juan Pérez Martínez", "EST-2024-002", 22, 7.5, true);
+    // Constructor con parametros
+    Estudiante estudiante2("Juan Perez Martinez", "EST-2024-002", 22, 7.5, true);
 
-    std::cout << "Estudiante 2 (constructor con parámetros):\n";
+    std::cout << "Estudiante 2 (constructor con parametros):\n";
     estudiante2.mostrarInformacionCompleta();
     estudiante2.calcularEstadoAcademico();
     std::cout << std::endl;
@@ -36,8 +38,8 @@ int main() {
     estudiante2.mostrarEdad();
     std::cout << std::endl;
 
-    // Validación promedio
-    std::cout << "Intentando actualizar promedio con valor inválido:\n";
+    // Probar validacion promedio
+    std::cout << "Intentando actualizar promedio con valor invalido:\n";
     estudiante2.actualizarPromedio(15.0);
     estudiante2.mostrarPromedio();
 
