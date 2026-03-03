@@ -4,21 +4,24 @@
 #include <string>
 #include "vehiculo.h"
 
-class moto : public Vehiculo {
+class Moto : public Vehiculo {
 private:
-    int numeroPuertas;
-
+    int cilindrada;
+    int numeroEjes;
 
 public:
     //constructores
-    moto();
-    moto(std::string marca, std::string modelo, int anio, int numeroPuertas);
+    Moto();
+    Moto(std::string marca, std::string modelo, std::string placa,
+         int anio, int cilindrada, int numeroEjes);
 
     //metodos para actualizar
-    void actualizarNumeroPuertas(int nuevoNumero);
+    void actualizarCilindrada(int nuevaCilindrada);
+    void actualizarNumeroEjes(int nuevoNumeroEjes);
     //sobrescritura del metodo de la clase base
     void mostrarInformacion();
     //getter
-    int obtenerNumeroPuertas();
+    int obtenerCilindrada();
+    int obtenerNumeroEjes();
 };
 #endif // MOTO_H

@@ -2,26 +2,34 @@
 #include <iostream>
 
 //constructor por defecto
-moto::moto() : Vehiculo(){
-    numeroPuertas = 0;
+Moto::Moto() : Vehiculo(){
+    cilindrada = 0;
+    numeroEjes = 0;
 } 
 //constructor con parametros
-moto::moto(std::string marca , std::string modelo, int anio, int numeroPuertas)
-    : Vehiculo(marca, modelo, anio) {
-    this->numeroPuertas = numeroPuertas;
+Moto::Moto(std::string marca , std::string modelo, std::string placa, int anio, int cilindrada, int numeroEjes)
+    : Vehiculo(marca, modelo, anio, "B", placa), cilindrada(cilindrada), numeroEjes(numeroEjes) {
+    // inicializado en la lista
 }
 
 //motodo para actualizar 
-void moto::actualizarNumeroPuertas(int nuevoNumero) {
-    numeroPuertas = nuevoNumero;
+void Moto::actualizarCilindrada(int nuevaCilindrada) {
+    cilindrada = nuevaCilindrada;
 }
 
+void Moto::actualizarNumeroEjes(int nuevoNumeroEjes){
+    numeroEjes = nuevoNumeroEjes;
+}
 //Sobrescritura: reutiliza el método de la base y añade información del coche
-void moto::mostrarInformacion(){
+void Moto::mostrarInformacion(){
     Vehiculo::mostrarInformacion();
-    std::cout << "Numero de puertas: " << numeroPuertas << std::endl;
+    std::cout << "Cilindrada: " << cilindrada << std::endl;
+    std::cout << "Número de ejes: " << numeroEjes << std::endl;
 }
 //getter
-int moto::obtenerNumeroPuertas(){
-    return numeroPuertas;
+int Moto::obtenerCilindrada(){
+    return cilindrada;
+}
+int Moto::obtenerNumeroEjes(){
+    return numeroEjes;
 }

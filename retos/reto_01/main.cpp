@@ -17,51 +17,55 @@
 #include <iostream>
 #include "vehiculo.h"
 #include "coche.h"
+#include "Camion.h"
+#include "Autobus.h"
+#include "moto.h"
 
 int main() {
-    std::cout << "=== Ejemplo de herencia: Vehiculo y Coche ===" << std::endl;
+    std::cout << "=== Ejemplo de herencia: Vehiculo y derivados ===" << std::endl;
     std::cout << std::endl;
 
-    // Crear un vehículo (clase base)
-    Vehiculo vehiculo1("Ford", "F-150", 2019);
-    std::cout << "Vehículo 1 (clase base):" << std::endl;
-    vehiculo1.mostrarInformacion();
+    // base con parámetros completos (marca, modelo, año, licencia, placas)
+    Vehiculo veh1("Ford", "F-150", 2019, "C", "ABC-123");
+    std::cout << "Vehículo base:" << std::endl;
+    veh1.mostrarInformacion();
     std::cout << std::endl;
 
-    // Crear un coche usando el constructor por defecto
-    Coche coche1;
-    std::cout << "Coche 1 (constructor por defecto):" << std::endl;
+    // Coche concreto
+    Coche coche1("Toyota", "Corolla", "TOY-001", 2022, 1800, 2, 4);
+    std::cout << "Coche 1:" << std::endl;
     coche1.mostrarInformacion();
     std::cout << std::endl;
 
-    // Actualizar los valores del coche1 (hereda setters de Vehiculo + propio)
-    coche1.actualizarMarca("Toyota");
-    coche1.actualizarModelo("Corolla");
-    coche1.actualizarAnio(2022);
-    coche1.actualizarNumeroPuertas(4);
+    // Camión concreto
+    Camion camion1("Volvo", "FH16", "VOL-999", 2020, 4500, 4, 2);
+    std::cout << "Camión 1:" << std::endl;
+    camion1.mostrarInformacion();
+    std::cout << std::endl;
 
-    std::cout << "Coche 1 después de actualizar:" << std::endl;
+    // Autobús concreto
+    Autobus bus1("Mercedes", "Sprinter", "BUS-555", 2018, 2200, 3, 50);
+    std::cout << "Autobús 1:" << std::endl;
+    bus1.mostrarInformacion();
+    std::cout << std::endl;
+
+    // Moto concreta
+    Moto moto1("Honda", "CBR", "MOT-777", 2021, 1000, 2);
+    std::cout << "Moto 1:" << std::endl;
+    moto1.mostrarInformacion();
+    std::cout << std::endl;
+
+    // Actualizar algunos valores
+    std::cout << "Actualizando placa y año del autobús..." << std::endl;
+    bus1.actualizarPlacas("BUS-556");
+    bus1.actualizarAnio(2019);
+    bus1.mostrarInformacion();
+    std::cout << std::endl;
+
+    std::cout << "Cambiando número de puertas del coche..." << std::endl;
+    coche1.actualizarNumeroPuertas(2);
     coche1.mostrarInformacion();
     std::cout << std::endl;
-
-    // Crear un coche usando el constructor con parámetros
-    Coche coche2("Honda", "Civic", 2020, 4);
-    std::cout << "Coche 2 (constructor con parámetros):" << std::endl;
-    coche2.mostrarInformacion();
-    std::cout << std::endl;
-
-    // Demostrar que Coche hereda los getters de Vehiculo
-    std::cout << "Acceso a miembros heredados (Coche 2):" << std::endl;
-    std::cout << "  Marca (heredado): " << coche2.obtenerMarca() << std::endl;
-    std::cout << "  Modelo (heredado): " << coche2.obtenerModelo() << std::endl;
-    std::cout << "  Año (heredado): " << coche2.obtenerAnio() << std::endl;
-    std::cout << "  Puertas (propio): " << coche2.obtenerNumeroPuertas() << std::endl;
-    std::cout << std::endl;
-
-    // Modificar solo el número de puertas del coche2
-    coche2.actualizarNumeroPuertas(2);
-    std::cout << "Coche 2 después de cambiar a 2 puertas:" << std::endl;
-    coche2.mostrarInformacion();
 
     return 0;
 }

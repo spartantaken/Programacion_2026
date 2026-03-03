@@ -4,21 +4,29 @@
 #include <string>
 #include "vehiculo.h"
 
-class camion : public Vehiculo {
-    private:
-    int numeroPuertas;
-    public:
-    //constructores
-    camion();
-    camion(std::string marca, std::string modelo, int anio, int numeroPuertas);
+class Camion : public Vehiculo {
+private:
+  int numeroPuertas;
+  int cilindrada;
+  int numeroEjes;
 
-    //metodos para actualizar
-    void actualizarNumeroPuertas(int nuevoNumero);
-      // Sobrescritura del método de la clase base
-    void mostrarInformacion();
+public:
+  // Constructores
+  Camion();
+  Camion(std::string marca, std::string modelo, std::string placa,
+         int anio, int cilindrada, int numeroEjes, int numeroPuertas);
+  // Métodos para actualizar
+  void actualizarNumeroPuertas(int nuevoNumero);
+  void actualizarCilindrada(int nuevaCilindrada);
+  void actualizarNumeroEjes(int nuevoNumeroEjes);
 
-    // Getter
-    int obtenerNumeroPuertas();
+  // Sobrescritura del método de la clase base
+  void mostrarInformacion();
+
+  // Getter
+  int obtenerNumeroPuertas();
+  int obtenerCilindrada();
+  int obtenerNumeroEjes();
 };
 
 #endif // CAMION_H
