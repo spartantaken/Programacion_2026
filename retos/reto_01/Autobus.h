@@ -11,23 +11,22 @@ private:
   int numeroEjes;
 
 public:
-  // Constructores
+//construtores
   Autobus();
-  Autobus(std::string marca, std::string modelo, std::string placa,
-          int anio, int cilindrada, int numeroEjes, int numeroPuertas);
-
-  // Métodos para actualizar
-  void actualizarNumeroPuertas(int nuevoNúmero);
+ Autobus(std::string marca, std::string modelo,
+        int anio, std::string tipoLicencia,
+        std::string placas,
+        int cilindrada, int numeroEjes,
+        int numeroPuertas);
+    //Métodos para actualizar
+  void actualizarNumeroPuertas(int nuevoNumero);
   void actualizarCilindrada(int nuevaCilindrada);
   void actualizarNumeroEjes(int nuevoNumeroEjes);
-
-  // Sobrescritura del método de la clase base
+    // Sobrescritura del método de la clase base
   void mostrarInformacion();
-
-  // Getter
+    // Getter
   int obtenerNumeroPuertas();
   int obtenerCilindrada();
   int obtenerNumeroEjes();
 };
-
-#endif // AUTOBUS_H
+#endif // AUTOBUS_H 

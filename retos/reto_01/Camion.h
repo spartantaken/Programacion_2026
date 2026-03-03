@@ -13,8 +13,9 @@ private:
 public:
   // Constructores
   Camion();
-  Camion(std::string marca, std::string modelo, std::string placa,
-         int anio, int cilindrada, int numeroEjes, int numeroPuertas);
+  Camion(std::string marca, std::string modelo, int anio, 
+         std::string tipoLicencia,std::string placas,
+         int cilindrada, int numeroEjes, int numeroPuertas);
   // Métodos para actualizar
   void actualizarNumeroPuertas(int nuevoNumero);
   void actualizarCilindrada(int nuevaCilindrada);

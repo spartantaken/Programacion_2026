@@ -9,9 +9,10 @@ Coche::Coche() : Vehiculo() {
 }
 
 // Constructor con parámetros: pasa los datos del vehículo a la base
-Coche::Coche(std::string marca , std::string modelo, std::string placa, int anio,
+Coche::Coche(std::string marca , std::string modelo, int anio,
+             std::string tipoLicencia, std::string placa,
                  int cilindrada, int numeroEjes, int numeroPuertas)
-    : Vehiculo(marca, modelo, anio, "A", placa),
+    : Vehiculo(marca, modelo, anio, tipoLicencia, placa),
       cilindrada(cilindrada), numeroEjes(numeroEjes), numeroPuertas(numeroPuertas) {
     // inicializaciones hechas en la lista
 }
@@ -32,15 +33,12 @@ void Coche::actualizarNumeroEjes(int nuevoNumeroEjes) {
 // Sobrescritura: reutiliza el método de la base y añade información del coche
 void Coche::mostrarInformacion() {
     Vehiculo::mostrarInformacion();
-    std::cout << "Número de puertas: " << numeroPuertas << std::endl;
     std::cout << "Cilindrada: " << cilindrada << std::endl;
     std::cout << "Número de ejes: " << numeroEjes << std::endl;
+    std::cout << "Número de puertas: " << numeroPuertas << std::endl;
 }
 
 // Getter
-int Coche::obtenerNumeroPuertas() {
-    return numeroPuertas;
-}
 
 int Coche::obtenerCilindrada() {
     return cilindrada;
@@ -49,4 +47,6 @@ int Coche::obtenerCilindrada() {
 int Coche::obtenerNumeroEjes() {
     return numeroEjes;
 }
-
+int Coche::obtenerNumeroPuertas() {
+    return numeroPuertas;
+}
