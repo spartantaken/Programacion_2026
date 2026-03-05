@@ -9,12 +9,16 @@ Coche::Coche() : Vehiculo() {
 }
 
 // Constructor con parámetros: pasa los datos del vehículo a la base
-Coche::Coche(std::string marca , std::string modelo, int anio,
-             std::string tipoLicencia, std::string placa,
-                 int cilindrada, int numeroEjes, int numeroPuertas)
-    : Vehiculo(marca, modelo, anio, tipoLicencia, placa),
-      cilindrada(cilindrada), numeroEjes(numeroEjes), numeroPuertas(numeroPuertas) {
-    // inicializaciones hechas en la lista
+Coche::Coche(std::string marca , std::string modelo, 
+             int anio, std::string tipolicencia, 
+             std::string placa,
+             int cilindrada, int numeroEjes, 
+             int numeroPuertas)
+    : Vehiculo(marca, modelo, anio, tipolicencia, placa),
+      cilindrada(cilindrada), 
+      numeroEjes(numeroEjes), 
+      numeroPuertas(numeroPuertas) 
+{    
 }
 
 // Método para actualizar

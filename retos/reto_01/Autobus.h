@@ -14,7 +14,7 @@ public:
 //construtores
   Autobus();
  Autobus(std::string marca, std::string modelo,
-        int anio, std::string tipoLicencia,
+        int anio, std::string tipolicencia,
         std::string placas,
         int cilindrada, int numeroEjes,
         int numeroPuertas);

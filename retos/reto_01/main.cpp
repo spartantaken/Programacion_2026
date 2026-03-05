@@ -7,7 +7,7 @@
  *
  * O si prefieres usar la opción de estándar C++17:
  *
- *     g++ -std=c++17 vehiculo.cpp coche.cpp camion.cpp autobus.cpp moto.cpp main.cpp -o herencia
+ *    g++ -std=c++17 vehiculo.cpp coche.cpp Camion.cpp Autobus.cpp moto.cpp main.cpp -o herencia
  *
  * Para ejecutar el programa:
  *
@@ -45,22 +45,13 @@ int main() {
     std::cout << std::endl;
 
     // Autobus
-    Autobus bus1("Mercedes", "Sprinter", 2018, "C", "BUS-555", 2200, 3, 50);
+    Autobus bus1("Mercedes", "Sprinter", 2018, "C", "BUS-555", 2200, 3, 4);
     std::cout << "Autobus 1:" << std::endl;
     bus1.mostrarInformacion();
     std::cout << std::endl;
 
     // MOTO - CORREGIDO: Conversión explícita a std::string
-    Moto moto1(
-        std::string("Honda"), 
-        std::string("CBR"), 
-        2021, 
-        std::string("A"), 
-        std::string("MOT-777"), 
-        1000, 
-        2, 
-        0
-    );
+    Moto moto1("Honda", "CBR", 2021, "A", "MOT-777", 1000, 2);
     
     std::cout << "Moto 1:" << std::endl;
     moto1.mostrarInformacion();

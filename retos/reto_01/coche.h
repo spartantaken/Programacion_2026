@@ -14,7 +14,7 @@ public:
     // Constructores
     Coche();
     Coche(std::string marca, std::string modelo,int anio, 
-           std::string tipoLicencia,  std::string placa,
+           std::string tipolicencia,  std::string placa,
            int cilindrada, int numeroEjes, int numeroPuertas);
 
     // Métodos para actualizar

@@ -7,18 +7,21 @@ Moto::Moto() : Vehiculo() {
     numeroEjes = 0;
     numeroPuertas = 0; // Por defecto, las motos no tienen puertas
 }
-
 // Constructor con parámetros (7 parámetros)
 Moto::Moto(std::string marca, std::string modelo,
-                 int anio, std::string tipoLicencia,
+                 int anio, std::string tipolicencia,
                  std::string placas,
                  int cilindrada, int numeroEjes,
                  int numeroPuertas)
-    : Vehiculo(marca, modelo, anio, tipoLicencia, placas),
+    : Vehiculo(marca, modelo, anio, tipolicencia, placas),
       cilindrada(cilindrada),
       numeroEjes(numeroEjes),
       numeroPuertas(numeroPuertas)
 {
+}
+
+void Moto::actualizarNumeroPuertas(int nuevoNumero) {
+    numeroPuertas = nuevoNumero; 
 }
 
 void Moto::actualizarCilindrada(int nuevaCilindrada) {
@@ -28,23 +31,7 @@ void Moto::actualizarCilindrada(int nuevaCilindrada) {
 void Moto::actualizarNumeroEjes(int nuevoNumeroEjes) {
     numeroEjes = nuevoNumeroEjes;
 }
-
-void Moto::actualizarNumeroPuertas(int nuevoNumeroPuertas) {
-    numeroPuertas = nuevoNumeroPuertas;
-}
-
-int Moto::obtenerNumeroPuertas() {
-    return numeroPuertas;
-}
-
-int Moto::obtenerCilindrada() {
-    return cilindrada;
-}
-
-int Moto::obtenerNumeroEjes() {
-    return numeroEjes;
-}
-
+//sobrescritura
 void Moto::mostrarInformacion() {
     Vehiculo::mostrarInformacion();
     std::cout << "Cilindrada: " << cilindrada << std::endl;

@@ -1,6 +1,7 @@
 #include "Autobus.h"
 #include <iostream>
 
+//constructor por defecto
 Autobus::Autobus() : Vehiculo() {
     cilindrada = 0;
     numeroEjes = 0;
@@ -8,15 +9,14 @@ Autobus::Autobus() : Vehiculo() {
 }
 //constructor de parametros
 Autobus::Autobus(std::string marca, std::string modelo,
-                 int anio, std::string tipoLicencia,
+                 int anio, std::string tipolicencia,
                  std::string placas,
                  int cilindrada, int numeroEjes,
                  int numeroPuertas)
-    : Vehiculo(marca, modelo, anio, tipoLicencia, placas),
+    : Vehiculo(marca, modelo, anio, tipolicencia, placas),
       cilindrada(cilindrada),
       numeroEjes(numeroEjes),
       numeroPuertas(numeroPuertas)
-      //lista
 {
 }
 //metodo para actualizar
