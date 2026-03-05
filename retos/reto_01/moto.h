@@ -13,8 +13,7 @@ private:
 public:
     Moto();
     Moto(std::string marca, std::string modelo,
-         int anio, std::string tipolicencia,
-         std::string placas,
+         int anio, std::string placas,
          int cilindrada, int numeroEjes,
          int numeroPuertas = 0); // Por defecto, las motos no tienen puertas
 // Métodos para actualizar

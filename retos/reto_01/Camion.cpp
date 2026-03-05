@@ -6,15 +6,15 @@ Camion::Camion() : Vehiculo () {
     cilindrada = 0;
     numeroEjes = 0;
     numeroPuertas = 0;
+    tipolicencia = "C (camionero)";
 }
 
 // Constructor con parámetros
 Camion::Camion(std::string marca, std::string modelo,
-              int anio,std::string tipolicencia,
-             std::string placas,
+              int anio, std::string placas,
              int cilindrada, int numeroEjes,
              int numeroPuertas)
-    :Vehiculo(marca, modelo, anio, tipolicencia, placas),
+    :Vehiculo(marca, modelo, anio, "C (camionero)", placas),
      cilindrada(cilindrada), 
      numeroEjes(numeroEjes),
      numeroPuertas(numeroPuertas)

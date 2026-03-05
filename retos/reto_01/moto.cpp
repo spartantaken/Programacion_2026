@@ -6,14 +6,14 @@ Moto::Moto() : Vehiculo() {
     cilindrada = 0;
     numeroEjes = 0;
     numeroPuertas = 0; // Por defecto, las motos no tienen puertas
+    tipolicencia = "tipo M (Motociclista)";
 }
 // Constructor con parámetros (7 parámetros)
 Moto::Moto(std::string marca, std::string modelo,
-                 int anio, std::string tipolicencia,
-                 std::string placas,
+                 int anio, std::string placas,
                  int cilindrada, int numeroEjes,
                  int numeroPuertas)
-    : Vehiculo(marca, modelo, anio, tipolicencia, placas),
+    : Vehiculo(marca, modelo, anio, "tipo M (Motociclista)", placas),
       cilindrada(cilindrada),
       numeroEjes(numeroEjes),
       numeroPuertas(numeroPuertas)
