@@ -5,30 +5,25 @@
 #include "vehiculo.h"
 
 class Autobus : public Vehiculo {
-private:
-  int numeroPuertas;
-  int asientos;
-  int cilindrada;
-  int numeroEjes;
+    int numeroPasajeros;
 
 public:
-//construtores
-  Autobus();
- Autobus(std::string marca, std::string modelo,
-        int anio, std::string placas,
-        int cilindrada, int numeroEjes,
-        int numeroPuertas, int asientos);
-    //Métodos para actualizar
-  void actualizarNumeroPuertas(int nuevoNumero);
-  void actualizarCilindrada(int nuevaCilindrada);
-  void actualizarNumeroEjes(int nuevoNumeroEjes);
-  void actualizarAsientos(int nuevosAsientos);
-    // Sobrescritura del método de la clase base
-  void mostrarInformacion();
-    // Getter
-  int obtenerNumeroPuertas();
-  int obtenerCilindrada();
-  int obtenerNumeroEjes();
-  int obtenerAsientos();
+    //constructores
+    Autobus();
+    Autobus(std::string marca, std::string modelo, int anio,
+            std::string tipolicencia, std::string placas,
+            int numeroPasajeros);
+
+    //método para actualizar
+    void actualizarNumeroPasajeros(int nuevoNumero);
+
+    //sobrescritura del método de la clase base
+    void mostrarInformacion();
+
+    //Getter
+    int obtenerNumeroPasajeros();
 };
-#endif // AUTOBUS_H 
+
+#endif // AUTOBUS_H
+
+

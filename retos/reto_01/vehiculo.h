@@ -8,22 +8,24 @@ protected:
     std::string marca;
     std::string modelo;
     int anio;
-    std::string tipolicencia; 
-    std::string placas;         
+    std::string tipolicencia;
+    std::string placas;
 
 public:
+    // Constructores
     Vehiculo();
-    Vehiculo(std::string marca, std::string modelo, int anio, 
-             std::string tipolicencia, std::string placas);
+    Vehiculo(std::string marca, std::string modelo, int anio, std::string tipolicencia, std::string placas);
 
+    // Métodos para actualizar
     void actualizarMarca(std::string nuevaMarca);
     void actualizarModelo(std::string nuevoModelo);
     void actualizarAnio(int nuevoAnio);
-    void actualizarTipoLicencia(std::string nuevaTipo);
+    void actualizarTipoLicencia(std::string nuevoTipo);
     void actualizarPlacas(std::string nuevasPlacas);
+    // Métodos para mostrar
+    void mostrarInformacion();
 
-    virtual void mostrarInformacion(); 
-
+    // Getters
     std::string obtenerMarca();
     std::string obtenerModelo();
     int obtenerAnio();
@@ -31,4 +33,4 @@ public:
     std::string obtenerPlacas();
 };
 
-#endif
+#endif // VEHICULO_H

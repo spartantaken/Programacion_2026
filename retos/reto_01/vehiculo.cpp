@@ -1,10 +1,18 @@
 #include "vehiculo.h"
 #include <iostream>
 
-Vehiculo::Vehiculo() : marca(""), modelo(""), anio(0), tipolicencia(""), placas("") {}
+// Constructor por defecto
+Vehiculo::Vehiculo() {
+    marca = "";
+    modelo = "";
+    anio = 0;
+    tipolicencia = "";
+    placas = "";
+}
 
+// Constructor con parámetros
 Vehiculo::Vehiculo(std::string marca, std::string modelo, int anio,
-                   std::string tipolicencia, std::string placas) {
+                   std::string tipollicencia, std::string placas) {
     this->marca = marca;
     this->modelo = modelo;
     this->anio = anio;
@@ -12,19 +20,53 @@ Vehiculo::Vehiculo(std::string marca, std::string modelo, int anio,
     this->placas = placas;
 }
 
-void Vehiculo::actualizarMarca(std::string nuevaMarca) { marca = nuevaMarca; }
-void Vehiculo::actualizarModelo(std::string nuevoModelo) { modelo = nuevoModelo; }
-void Vehiculo::actualizarAnio(int nuevoAnio) { anio = nuevoAnio; }
-void Vehiculo::actualizarTipoLicencia(std::string nuevaTipo) { tipolicencia = nuevaTipo; }
-void Vehiculo::actualizarPlacas(std::string nuevasPlacas) { placas = nuevasPlacas; }
-
-void Vehiculo::mostrarInformacion() {
-    std::cout << "Marca: " << marca << "\nModelo: " << modelo << "\nAño: " << anio 
-              << "\nTipo de licencia: " << tipolicencia << "\nPlacas: " << placas << std::endl;
+// Métodos para actualizar
+void Vehiculo::actualizarMarca(std::string nuevaMarca) {
+    marca = nuevaMarca;
 }
 
-std::string Vehiculo::obtenerMarca() { return marca; }
-std::string Vehiculo::obtenerModelo() { return modelo; }
-int Vehiculo::obtenerAnio() { return anio; }
-std::string Vehiculo::obtenerTipoLicencia() { return tipolicencia; }
-std::string Vehiculo::obtenerPlacas() { return placas; }
+void Vehiculo::actualizarModelo(std::string nuevoModelo) {
+    modelo = nuevoModelo;
+}
+
+void Vehiculo::actualizarAnio(int nuevoAnio) {
+    anio = nuevoAnio;
+}
+
+void Vehiculo::actualizarTipoLicencia(std::string nuevoTipo) {
+    tipolicencia = nuevoTipo;
+}
+
+void Vehiculo::actualizarPlacas(std::string nuevasPlacas) {
+    placas = nuevasPlacas;
+}
+
+// Método para mostrar
+void Vehiculo::mostrarInformacion() {
+    std::cout << "Marca: " << marca << std::endl;
+    std::cout << "Modelo: " << modelo << std::endl;
+    std::cout << "Año: " << anio << std::endl;
+    std::cout << "Tipo de licencia: " << tipolicencia << std::endl;
+    std::cout << "Placas: " << placas << std::endl;
+}
+
+// Getters
+std::string Vehiculo::obtenerMarca() {
+    return marca;
+}
+
+std::string Vehiculo::obtenerModelo() {
+    return modelo;
+}
+
+int Vehiculo::obtenerAnio() {
+    return anio;
+}
+
+std::string Vehiculo::obtenerTipoLicencia(){
+    return tipolicencia;
+}
+
+std::string Vehiculo::obtenerPlacas(){
+    return placas;
+}

@@ -5,27 +5,24 @@
 #include "vehiculo.h"
 
 class Moto : public Vehiculo {
-private:
-    int numeroPuertas; // Aunque las motos no tienen puertas, lo dejamos para mantener la estructura
-    int cilindrada;
-    int numeroEjes;
+    int Cilindrada;
 
 public:
+    // constructores
     Moto();
-    Moto(std::string marca, std::string modelo,
-         int anio, std::string placas,
-         int cilindrada, int numeroEjes,
-         int numeroPuertas = 0); // Por defecto, las motos no tienen puertas
-// Métodos para actualizar
-    void actualizarNumeroPuertas(int nuevoNumero);
+    Moto(std::string marca, std::string modelo, int anio,
+         std::string tipolicencia, std::string placas,
+         int cilindrada);
+        
+    //métodos para actualizar 
     void actualizarCilindrada(int nuevaCilindrada);
-    void actualizarNumeroEjes(int nuevoNumeroEjes);
-// Sobrescritura del método de la clase base
+
+    //sobrescritura del método de la clase base
     void mostrarInformacion();
-//getter
-    int obtenerNumeroPuertas();
+
+    //Getter
     int obtenerCilindrada();
-    int obtenerNumeroEjes();
+
 };
 
 #endif // MOTO_H
