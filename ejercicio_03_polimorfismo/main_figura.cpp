@@ -1,35 +1,78 @@
-#include "Figura.h"
-#include "Rectangulo.h"
-#include "Circulo.h"
-#include "Triangulo.h"
-#include "Cuadrado.h"
+/*
+ * Instrucciones de Compilación:
+ *
+ * Para compilar este programa, utiliza el siguiente comando:
+ *
+ *     g++ Figura.cpp Rectangulo.cpp Cuadrado.cpp Triangulo.cpp main_figura.cpp -o figuras
+ *
+ * O si prefieres usar el estándar C++17:
+ *
+ *     g++ -std=c++17 Figura.cpp Circulo.cpp Rectangulo.cpp Cuadrado.cpp Triangulo.cpp main_figura.cpp -o figuras
+ *
+ * Para ejecutar el programa:
+ *
+ *     ./figuras
+ *
+ */
 #include <iostream>
+#include "Rectangulo.h"
+#include "Cuadrado.h"
+#include "Triangulo.h"
+#include "Circulo.h"
+#include "Figura.h"
+
+using namespace std;
 
 int main() {
-    std::cout << "=== Sistema de Figuras ===" << std::endl;
-    std::cout << std::endl;
-    
-    //========================
-    //Figuras 
-    //========================
 
-    Rectangulo rectangulo1("Rectangulo1", 5.0, 3.0);
-    std::cout << "Area del " << rectangulo1.obtenerNombre()
-              << ": " << rectangulo1.calcularArea() << std::endl;
-    rectangulo1.describir();
+    double baseR, alturaR;
+    double lado;
+    double baseT, alturaT;
+    double radio;
 
-    Circulo circulo1("Circulo1", 4.0);
-    std::cout << "Area del " << circulo1.obtenerNombre()
-              << ": " << circulo1.calcularArea() << std::endl;
-    circulo1.describir();
+    cout << "Base del rectangulo: ";
+    cin >> baseR;
 
-    Triangulo triangulo1("Triangulo1", 6.0, 4.0);
-    std::cout << "Area del " << triangulo1.obtenerNombre()
-              << ": " << triangulo1.calcularArea() << std::endl;
-    triangulo1.describir();
+    cout << "Altura del rectangulo: ";
+    cin >> alturaR;
 
-    Cuadrado cuadrado1("Cuadrado1", 5.0);
-    std::cout << "Area del " << cuadrado1.obtenerNombre()
-              << ": " << cuadrado1.calcularArea() << std::endl;
-    cuadrado1.describir();
+    cout << "Lado del cuadrado: ";
+    cin >> lado;
+
+    cout << "Base del triangulo: ";
+    cin >> baseT;
+
+    cout << "Altura del triangulo: ";
+    cin >> alturaT;
+
+    cout << "Radio del circulo: ";
+    cin >> radio;
+
+    Figura* r = new Rectangulo("Rectangulo", baseR, alturaR);
+    Figura* c = new Cuadrado("Cuadrado", lado);
+    Figura* t = new Triangulo("Triangulo", baseT, alturaT);
+    Figura* ci = new Circulo("Circulo", radio);
+
+    cout << "\n--- Rectangulo ---\n";
+    r->describir();
+    cout << "Area: " << r->calcularArea() << endl;
+
+    cout << "\n--- Cuadrado ---\n";
+    c->describir();
+    cout << "Area: " << c->calcularArea() << endl;
+
+    cout << "\n--- Triangulo ---\n";
+    t->describir();
+    cout << "Area: " << t->calcularArea() << endl;
+
+    cout << "\n--- Circulo ---\n";
+    ci->describir();
+    cout << "Area: " << ci->calcularArea() << endl;
+
+    delete r;
+    delete c;
+    delete t;
+    delete ci;
+
+    return 0;
 }

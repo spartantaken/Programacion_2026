@@ -10,6 +10,8 @@ Circulo::Circulo(std::string nombre, double radio)
         return 3.14159 * radio * radio; 
 }
 
+Circulo::~Circulo() {}
+
 void Circulo::describir(){
     std::cout << "figura: "<< nombre << std::endl;
     std::cout << "Radio: " << radio << std::endl;

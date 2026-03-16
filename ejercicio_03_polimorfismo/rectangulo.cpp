@@ -8,6 +8,8 @@ Rectangulo::Rectangulo(std::string nombre, double base, double altura)
 
 }
 
+Rectangulo::~Rectangulo() {}
+
 double Rectangulo::calcularArea(){
     return base * altura;
 }

@@ -1,21 +1,28 @@
 #ifndef RECTANGULO_H
-#define RECTANGILO_H
+#define RECTANGULO_H
+
 #include "Figura.h"
-#include <iostream>
+#include <string>
 
 class Rectangulo : public Figura {
-    private:
-        double base; //double es utiliza para números con decimales y int para numeros enteros 
-        double altura;
-    //constructores
-        public:
-        Rectangulo(std::string nombre, double base, double altura);
-        ~Rectangulo();
-        double calcularArea() override;
-        void describir() override;
+private:
+    double base;   // double se usa para números con decimales
+    double altura;
 
-        double obtenerBase();
-        double obtenerAltura();
+public:
+    // Constructor
+    Rectangulo(std::string nombre, double base, double altura);
+
+    // Destructor
+    ~Rectangulo();
+
+    // Métodos sobrescritos
+    double calcularArea() override;
+    void describir() override;
+
+    // Getters
+    double obtenerBase();
+    double obtenerAltura();
 };
 
 #endif // RECTANGULO_H

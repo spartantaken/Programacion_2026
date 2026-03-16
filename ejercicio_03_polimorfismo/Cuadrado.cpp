@@ -3,8 +3,10 @@
 
 Cuadrado::Cuadrado(std::string nombre, double lado)
     : Figura(nombre) {
-        this->lado = lado;
+    this->lado = lado;
 }
+
+Cuadrado::~Cuadrado() {}
 
 double Cuadrado::calcularArea() {
     return lado * lado;
