@@ -1,3 +1,6 @@
+//Para compilar en Windows con g++: g++ main.cpp Mensaje.cpp Conversacion.cpp -o chatbot -lcurl
+//Para ejecutar: .\chatbot.exe --provider gemini --model gemini-2.5-flash
+
 #include <curl/curl.h>
 
 #include <algorithm>
@@ -10,7 +13,6 @@
 #include <stdexcept>
 #include <string>
 
-// 🔥 AGREGADO
 #include "Conversacion.h"
 
 #ifdef _WIN32
@@ -270,7 +272,6 @@ int main(int argc, char* argv[]) {
 
         load_dotenv_file(".env");
 
-        // 🔥 CAMBIO: usar GEMINI_API_KEY
         const char* key = std::getenv("GEMINI_API_KEY");
         if (!key) throw std::runtime_error("Falta GEMINI_API_KEY");
 
@@ -283,12 +284,10 @@ int main(int argc, char* argv[]) {
             return 1;
         }
 
-        // 🔥 CREAR CONVERSACIÓN
         Conversacion chat("conversacion.json");
 
         curl_global_init(CURL_GLOBAL_DEFAULT);
 
-        // 🔥 CAMBIOS: URL + endpoint + modelo Gemini
         const std::string response_json = request_chat_completion(
             key,
             "https://generativelanguage.googleapis.com/v1beta/openai",
@@ -304,7 +303,6 @@ int main(int argc, char* argv[]) {
         if (!content.empty()) {
             std::cout << "\nModel response:\n" << content << "\n";
 
-            // 🔥 GUARDAR EN JSON
             chat.agregarMensaje(prompt, content);
 
         } else {
